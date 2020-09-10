@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.PieChart?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.des.jslp.motorgalicia.ControladorCochesPorUsuario">
+   <children>
+   
+   	<MenuBar style="-fx-background-color: #999999; -fx-border-color: black;">
+          <menus>
+          
+          	   <Menu style="-fx-font-weight: bold;" text="Menú Noticias" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaNoticias" text="Noticias" />
+                  	</items>
+               </Menu>
+          
+               <Menu style="-fx-font-weight: bold;" text="Menú Datos">
+                  <items>
+                      <MenuItem onAction="#mostrarPantallaCoches" text="Coches" />
+                      <MenuItem onAction="#mostrarPantallaUsuarios" text="Usuarios" />
+                      <MenuItem onAction="#mostrarPantallaChart" text="Gráfico" />
+                  </items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Menú Quedadas" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaQuedadas" text="Quedadas" />
+                  		<MenuItem onAction="#mostrarPantallaMaps" text="Mapas" />
+                  	</items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Menú Sugerencias" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaSugerencias" text="Sugerencias" />
+                  	</items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Cerrar Sesión" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaLogin" text="Logout" />
+                  	</items>
+               </Menu>
+          </menus>
+	</MenuBar>
+   	
+   	<Button onAction="#cargarDatosEnElChart">
+   		<graphic>
+      		<ImageView fitHeight="50.0" fitWidth="50.0">
+      			<image>
+      				<Image url="@../../../../../iconos/cargar.png" />
+      			</image>
+      		</ImageView>
+   		</graphic>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+   	</Button>
+   	
+   	<StackPane>
+      <children>
+      		<PieChart fx:id="chart" legendSide="BOTTOM" style="-fx-font-weight: bold; -fx-background-color: #999999; -fx-border-color: black;" title="COCHES POR USUARIO" />
+      </children>
+   	</StackPane>
+   </children>
+	
+</VBox>

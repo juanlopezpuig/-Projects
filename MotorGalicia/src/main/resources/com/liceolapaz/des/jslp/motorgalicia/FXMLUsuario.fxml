@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.des.jslp.motorgalicia.ControladorUsuario">
+      
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+   <children>
+       
+       <MenuBar style="-fx-background-color: #999999; -fx-border-color: black;">
+          <menus>
+          
+          	   <Menu style="-fx-font-weight: bold;" text="Menú Noticias" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaNoticias" text="Noticias" />
+                  	</items>
+               </Menu>
+          
+               <Menu style="-fx-font-weight: bold;" text="Menú Datos">
+                  <items>
+                      <MenuItem onAction="#mostrarPantallaCoches" text="Coches" />
+                      <MenuItem onAction="#mostrarPantallaUsuarios" text="Usuarios" />
+                      <MenuItem onAction="#mostrarPantallaChart" text="Gráfico" />
+                  </items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Menú Quedadas" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaQuedadas" text="Quedadas" />
+                  		<MenuItem onAction="#mostrarPantallaMaps" text="Mapas" />
+                  	</items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Menú Sugerencias" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaSugerencias" text="Sugerencias" />
+                  	</items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Cerrar Sesión" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaLogin" text="Logout" />
+                  	</items>
+               </Menu>
+          </menus>
+	</MenuBar>
+       
+       <ToolBar style="-fx-background-color: #999999; -fx-border-color: black;" HBox.hgrow="ALWAYS">
+          <items>
+              
+              <Button onAction="#buscar">
+                  <tooltip>
+                      <Tooltip text="Buscar" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                              <Image url="@../../../../../iconos/buscar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+              
+              <Button onAction="#guardar">
+                   <tooltip>
+                      <Tooltip text="Guardar" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                              <Image url="@../../../../../iconos/guardar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+              
+              <Button onAction="#editar">
+                   <tooltip>
+                      <Tooltip text="Editar" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                              <Image url="@../../../../../iconos/editar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+              
+              <Button onAction="#eliminar">
+                   <tooltip>
+                      <Tooltip text="Eliminar" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                             <Image url="@../../../../../iconos/eliminar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+          </items>
+       </ToolBar>
+       
+       <GridPane hgap="10" style="-fx-border-color: black;" vgap="10">
+           <padding>
+           <Insets bottom="10" left="10" right="10" top="10" />
+           </padding>
+          <children>
+          
+       <Text style="-fx-font-weight: bold;" text="INTRODUZCA DATOS DEL USUARIO" textAlignment="LEFT" GridPane.columnSpan="2" GridPane.halignment="LEFT">
+           <font>
+               <Font name="Arial" size="25.0" />
+           </font>
+       </Text>
+          
+              <Label style="-fx-font-weight: bold;" text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+              <TextField fx:id="nombre" style="-fx-background-color: #999999;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+              
+              <Label style="-fx-font-weight: bold;" text="Apellidos" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+              <TextField fx:id="apellidos" style="-fx-background-color: #999999;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+              
+              <Label style="-fx-font-weight: bold;" text="Fecha Nacimiento" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+              <DatePicker fx:id="fechaNacimiento" style="-fx-background-color: #999999;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+              
+              <Label style="-fx-font-weight: bold;" text="Intereses" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+              <ComboBox fx:id="intereses" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <items>
+                      <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Mecanica" />
+                          <String fx:value="Detailing" />
+                          <String fx:value="Modificaciones" />
+                          <String fx:value="Quedadas" />
+                      </FXCollections>
+                  </items>
+              </ComboBox>
+              
+              <Label style="-fx-font-weight: bold;" text="Localización" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+              <TextField fx:id="localizacion" style="-fx-background-color: #999999;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+          </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+       </GridPane>
+       
+      <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #999999; -fx-border-color: black;">
+        <items>
+          <Button onAction="#cargarUsuariosDeLaBase" style="-fx-border-color: black;" text="Mostrar todos los usuarios">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button onAction="#limpiarListado" style="-fx-border-color: black;" text="Borrar listado de usuarios">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+          <Button onAction="#limpiarCampos" style="-fx-border-color: black;" text="Borrar campos de usuario">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+        </items>
+      </ToolBar>
+       
+       <StackPane HBox.hgrow="ALWAYS">
+          <children>
+              <TableView fx:id="tablaUsuario" style="-fx-background-color: #999999; -fx-border-color: black;">
+                  <columns>
+                      <TableColumn text="ID">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="id" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                      <TableColumn text="Nombre">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="nombre" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                       <TableColumn text="Apellidos">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="apellidos" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                       <TableColumn text="Fecha Nacimiento">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="fechaNacimiento" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                       <TableColumn text="Intereses">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="intereses" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                      <TableColumn text="Localización">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="localizacion" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                  </columns>
+              </TableView>
+          </children>
+       </StackPane>
+   </children>
+</VBox>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.des.jslp.motorgalicia.ControladorInformacionUsuario">
+      
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+   <children>
+       
+        <MenuBar style="-fx-background-color: #999999; -fx-border-color: black;">
+          <menus>
+          	   <Menu style="-fx-font-weight: bold;" text="Menú Información">
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaInformacionUsuario" text="Información" />
+                  	</items>
+               </Menu>
+               
+          	   <Menu style="-fx-font-weight: bold;" text="Menú Noticias">
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaNoticiasUsuario" text="Noticias" />
+                  	</items>
+               </Menu>
+          	   
+          	   <Menu style="-fx-font-weight: bold;" text="Menú Coches">
+                  <items>
+                      <MenuItem onAction="#mostrarPantallaCochesUsuario" text="Coches" />
+                  </items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Menú Quedadas">
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaQuedadasUsuario" text="Quedadas" />
+                  		<MenuItem onAction="#mostrarPantallaMapsUsuario" text="Mapas" />
+                  		<MenuItem onAction="#mostrarPantallaQuedadasApuntarse" text="Apuntarse" /> 
+                  	</items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Menú Sugerencias">
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaSugerenciasUsuario" text="Sugerencias" />
+                  	</items>
+               </Menu>
+               <Menu style="-fx-font-weight: bold;" text="Cerrar Sesión">
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaLogin" text="Logout" />
+                  	</items>
+               </Menu>
+          </menus>
+	</MenuBar>
+       
+       <ToolBar style="-fx-background-color: #999999; -fx-border-color: black;" HBox.hgrow="ALWAYS">
+         <items>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="980.0" text="MOTOR GALICIA" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+         </items>
+       </ToolBar>
+      <TextArea editable="false" style="-fx-border-color: black; -fx-control-inner-background:#999999;" text="Motor Galicia es un lugar de reunión para amantes del motor, donde organizamos eventos, quedadas o rutas por toda Galicia.&#10;&#10;Puedes ver la actualidad del mundo del motor en nuestra sección de noticias.&#10;&#10;Consulta los coches que han participado en alguno de nuestros eventos.&#10;&#10;En la sección de quedadas, puedes informarte sobre futuros eventos y apuntarte.&#10;&#10;También puedes enviarnos sugerencias o para cualquier otra duda, ponte en contacto con nosotros a través de nuestro mail.">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextArea>
+      <ToolBar layoutX="20.0" layoutY="188.0" style="-fx-background-color: #999999; -fx-border-color: black;">
+         <items>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="980.0" text="CONTACTO : motorgalicia@gmail.com" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </items>
+      </ToolBar>
+      <Pane prefHeight="350.0" prefWidth="1000.0" style="-fx-border-color: BLACK; -fx-border-width: 2px;">
+         <children>
+            <ImageView fitHeight="338.0" fitWidth="999.9" layoutX="2.5" layoutY="1.6">
+            	<image>
+               		<Image url="@../../../../../imagenes/fondoInformacion.jpg" />
+            	</image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</VBox>

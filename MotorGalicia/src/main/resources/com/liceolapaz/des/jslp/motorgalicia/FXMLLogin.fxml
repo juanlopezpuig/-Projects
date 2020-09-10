@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.des.jslp.motorgalicia.ControladorLogin">
+   <children>
+   <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+      <children>
+         <ImageView fitHeight="790.0" fitWidth="1050.0" layoutX="-12.0">
+            <image>
+               <Image url="@../../../../../imagenes/fondo.jpg" />
+            </image>
+         </ImageView>
+         <Label layoutX="332.0" layoutY="94.0" prefHeight="68.0" prefWidth="361.0" style="-fx-border-radius: 5px; -fx-border-color: black; -fx-border-width: 3px; -fx-background-color: #999999;" text=" MOTOR GALICIA" textAlignment="JUSTIFY">
+            <font>
+               <Font name="System Bold" size="42.0" />
+            </font>
+         </Label>
+         <Label layoutX="332.0" layoutY="177.0" prefHeight="50.0" prefWidth="108.0" style="-fx-background-color: #999999; -fx-border-color: BLACK; -fx-border-width: 3px; -fx-border-radius: 5px;" text=" Usuario">
+            <font>
+               <Font name="System Bold" size="25.0" />
+            </font>
+         </Label>
+         <Label layoutX="332.0" layoutY="238.0" prefHeight="50.0" prefWidth="153.0" style="-fx-background-color: #999999; -fx-border-color: BLACK; -fx-border-width: 3px; -fx-border-radius: 5px;" text=" Contraseña">
+            <font>
+               <Font name="System Bold" size="25.0" />
+            </font>
+         </Label>
+         <TextField fx:id="usuario" layoutX="440.0" layoutY="177.0" prefHeight="23.0" prefWidth="255.0" style="-fx-background-color: #999999; -fx-border-color: BLACK; -fx-border-width: 3px; -fx-border-radius: 5px;">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextField>
+         <PasswordField fx:id="password" layoutX="485.0" layoutY="238.0" prefHeight="50.0" prefWidth="209.0" style="-fx-background-color: #999999; -fx-border-color: BLACK; -fx-border-width: 3px; -fx-border-radius: 5px;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </PasswordField>
+            
+         <Button layoutX="415.0" layoutY="307.0" onAction="#login" style="-fx-background-color: #999999; -fx-border-radius: 5px; -fx-border-color: BLACK; -fx-border-width: 3px;">
+                  <tooltip>
+                      <Tooltip text="Login" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                              <Image url="@../../../../../iconos/aceptar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+          </Button>
+              
+          <Button layoutX="533.0" layoutY="307.0" onAction="#cancelar" style="-fx-background-color: #999999; -fx-border-radius: 5px; -fx-border-color: BLACK; -fx-border-width: 3px;">
+                  <tooltip>
+                      <Tooltip text="Cancelar" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                              <Image url="@../../../../../iconos/cancelar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+              
+         <Button layoutX="800.0" layoutY="698.0" onAction="#entrarUsuario" mnemonicParsing="false" style="-fx-background-color: #999999; -fx-border-color: BLACK; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Modo Usuario">
+            <font>
+               <Font name="System Bold" size="25.0" />
+            </font>
+         </Button>
+      </children>
+   </Pane>
+   </children>
+</VBox>

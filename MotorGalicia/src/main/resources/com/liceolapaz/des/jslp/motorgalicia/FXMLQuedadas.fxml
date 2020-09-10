@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.des.jslp.motorgalicia.ControladorQuedada">
+      
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+   <children>
+       
+        <MenuBar style="-fx-background-color: #999999; -fx-border-color: black;">
+          <menus>
+          
+          	   <Menu style="-fx-font-weight: bold;" text="Menú Noticias" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaNoticias" text="Noticias" />
+                  	</items>
+               </Menu>
+          
+               <Menu style="-fx-font-weight: bold;" text="Menú Datos">
+                  <items>
+                      <MenuItem onAction="#mostrarPantallaCoches" text="Coches" />
+                      <MenuItem onAction="#mostrarPantallaUsuarios" text="Usuarios" />
+                      <MenuItem onAction="#mostrarPantallaChart" text="Gráfico" />
+                  </items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Menú Quedadas" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaQuedadas" text="Quedadas" />
+                  		<MenuItem onAction="#mostrarPantallaMaps" text="Mapas" />
+                  	</items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Menú Sugerencias" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaSugerencias" text="Sugerencias" />
+                  	</items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Cerrar Sesión" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaLogin" text="Logout" />
+                  	</items>
+               </Menu>
+          </menus>
+	</MenuBar>
+       
+       <ToolBar style="-fx-background-color: #999999; -fx-border-color: black;" HBox.hgrow="ALWAYS">
+          <items>
+              
+              <Button onAction="#buscar">
+                  <tooltip>
+                      <Tooltip text="Buscar" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                              <Image url="@../../../../../iconos/buscar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+              
+              <Button onAction="#guardar">
+                   <tooltip>
+                      <Tooltip text="Guardar" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                              <Image url="@../../../../../iconos/guardar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+              
+              <Button onAction="#editar">
+                   <tooltip>
+                      <Tooltip text="Editar" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                              <Image url="@../../../../../iconos/editar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+              
+              <Button onAction="#eliminar">
+                   <tooltip>
+                      <Tooltip text="Eliminar" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                             <Image url="@../../../../../iconos/eliminar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+          </items>
+       </ToolBar>
+       
+       <GridPane hgap="10" style="-fx-border-color: black;" vgap="10">
+           <padding>
+           <Insets bottom="10" left="10" right="10" top="10" />
+           </padding>
+          <children>
+          
+       <Text style="-fx-font-weight: bold;" text="INTRODUZCA DATOS DE LA QUEDADA" textAlignment="LEFT" GridPane.columnSpan="2" GridPane.halignment="LEFT">
+           <font>
+               <Font name="Arial" size="25.0" />
+           </font>
+       </Text>
+          
+              <Label style="-fx-font-weight: bold;" text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+              <TextField fx:id="nombre" style="-fx-background-color: #999999;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+          
+              <Label style="-fx-font-weight: bold;" text="Fecha" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+              <DatePicker fx:id="fecha" style="-fx-background-color: #999999;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+              
+              <Label style="-fx-font-weight: bold;" text="Descripción" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+              <TextArea fx:id="descripcion" style="-fx-control-inner-background:#999999;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+              
+          </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+       </GridPane>
+       
+      <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #999999; -fx-border-color: black;">
+        <items>
+          <Button onAction="#cargarQuedadasDeLaBase" style="-fx-border-color: black;" text="Mostrar todas las quedadas">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button onAction="#limpiarListado" style="-fx-border-color: black;" text="Borrar listado de quedadas">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+          <Button onAction="#limpiarCampos" style="-fx-border-color: black;" text="Borrar campos de quedada">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+        </items>
+      </ToolBar>
+       
+       <StackPane HBox.hgrow="ALWAYS">
+          <children>
+              <TableView fx:id="tablaQuedada" style="-fx-background-color: #999999; -fx-border-color: black;">
+                  <columns>
+                      <TableColumn text="Id">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="id" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                      <TableColumn text="Nombre">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="nombre" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                       <TableColumn text="Fecha">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="fecha" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                       <TableColumn text="Descripción">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="descripcion" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                  </columns>
+              </TableView>
+          </children>
+       </StackPane>
+   </children>
+</VBox>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.des.jslp.motorgalicia.ControladorCocheUsuario">
+      
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+   <children>
+       
+        <MenuBar style="-fx-background-color: #999999; -fx-border-color: black;">
+          <menus>
+          	   <Menu style="-fx-font-weight: bold;" text="Menú Información">
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaInformacionUsuario" text="Información" />
+                  	</items>
+               </Menu>
+               
+          	   <Menu style="-fx-font-weight: bold;" text="Menú Noticias">
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaNoticiasUsuario" text="Noticias" />
+                  	</items>
+               </Menu>
+          	   
+          	   <Menu style="-fx-font-weight: bold;" text="Menú Coches">
+                  <items>
+                      <MenuItem onAction="#mostrarPantallaCochesUsuario" text="Coches" />
+                  </items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Menú Quedadas" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaQuedadasUsuario" text="Quedadas" />
+                  		<MenuItem onAction="#mostrarPantallaMapsUsuario" text="Mapas" />
+                  		<MenuItem onAction="#mostrarPantallaQuedadasApuntarse" text="Apuntarse" /> 
+                  	</items>
+               </Menu>
+               
+               <Menu style="-fx-font-weight: bold;" text="Menú Sugerencias" >
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaSugerenciasUsuario" text="Sugerencias" />
+                  	</items>
+               </Menu>
+               <Menu style="-fx-font-weight: bold;" text="Cerrar Sesión">
+                  	<items>
+                  		<MenuItem onAction="#mostrarPantallaLogin" text="Logout" />
+                  	</items>
+               </Menu>
+          </menus>
+	</MenuBar>
+       
+       <ToolBar style="-fx-background-color: #999999; -fx-border-color: black;" HBox.hgrow="ALWAYS">
+          <items>
+              <Button onAction="#buscar">
+                  <tooltip>
+                      <Tooltip text="Buscar" />
+                  </tooltip>
+                  <graphic>
+                      <ImageView fitHeight="50.0" fitWidth="50.0">
+                         <image>
+                              <Image url="@../../../../../iconos/buscar.png" />
+                         </image>
+                      </ImageView>
+                  </graphic>
+              </Button>
+          </items>
+       </ToolBar>
+      
+       <ToolBar style="-fx-background-color: #999999; -fx-border-color: black;" HBox.hgrow="ALWAYS">
+         <items>
+            <Label text="LISTADO DE VEHÍCULOS">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+         </items>
+       </ToolBar>
+      
+       <StackPane HBox.hgrow="ALWAYS">
+          <children>
+              <TableView fx:id="tablaCoche" style="-fx-background-color: #999999; -fx-border-color: black;">
+                  <columns>
+                      <TableColumn text="Marca">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="marca" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                      <TableColumn text="Modelo">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="modelo" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      
+                      <TableColumn text="Año">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="anho" />
+                          </cellValueFactory>
+                      </TableColumn>
+                  </columns>
+              </TableView>
+          </children>
+       </StackPane>
+       
+       <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #999999; -fx-border-color: black;">
+        <items>
+          <Button onAction="#cargarCochesDeLaBase" style="-fx-border-color: black;" text="Mostrar todos los vehículos">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button onAction="#limpiarListado" style="-fx-border-color: black;" text="Borrar listado de vehículos">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+        </items>
+      </ToolBar>
+   </children>
+</VBox>
